@@ -110,13 +110,13 @@ function HitboxHandler:_cast()
 	self._params.MaxParts = 1
 	local start = tick()
 
-	task.spawn(function()
-		while task.wait() do
-			if tick() - start >= self._lifetime then
-				self:Stop()
-			end
-		end
-	end)
+	-- task.spawn(function()
+	-- 	while task.wait() do
+	-- 		if tick() - start >= self._lifetime then
+	-- 			self:Stop()
+	-- 		end
+	-- 	end
+	-- end)
 
 	local parts = spacial_query_funcs[self._shape](self)
 	for _, hit in parts do
